@@ -43,10 +43,11 @@ function handleClick(e) {
 	// Check for win
 	if(checkWin(currentClass)) {
 		endGame(false)
+		// Check for draw
 	} else if(isDraw()) {
 		endGame(true)
 	}
-	// Check for draw
+	
 	// swap turns
 	swapTurns()
 	setBoardHoverClass()

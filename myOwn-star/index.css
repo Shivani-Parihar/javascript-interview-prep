@@ -1,0 +1,55 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.star-rating-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin: 40px auto;
+	max-width: 160px;
+}
+
+.star-rating > label {
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	color: orange;
+}
+
+.star-rating > label::before {
+	content: "\2606";
+	position: absolute;
+}
+
+.star-rating input:checked ~ label::after {
+	content: "\2605";
+}
+
+.star-rating input:hover ~ label::before{
+	color: #ff69b4;
+	transition: 0.5s ease;
+}
+
+.star-rating label:active::before {
+	transform: scale(1.5);
+}
+
+.star-rating-text {
+	font-size: 30px;
+	color: rgba(0, 0, 0, .75)
+}

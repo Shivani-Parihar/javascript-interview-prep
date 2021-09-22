@@ -1,0 +1,41 @@
+.star-rating input {
+	display: none;
+}
+
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	margin: 40px auto;
+	width: 160px;
+}
+
+.star-rating > label {
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	position: relative;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: orange;
+	transition: 0.2s ease;
+}
+
+.star-rating label::before {
+	content: "\2606";
+	position: absolute;
+}
+
+.star-rating input:checked ~ label::before {
+	content: "\2605";
+}
+
+.star-rating label:hover {
+	color: #ff69b4;
+	transition: 0.2s ease;
+}
+
+.star-rating label:active::before {
+	transform: scale(1.2);
+}
